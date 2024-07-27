@@ -1,24 +1,24 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import axios from "axios";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import Weather from "../components/Weather";
 import Spinner from "../components/Spinner";
 
-// Define background images for different weather conditions
-const weatherBackgrounds = {
-  Clear:
-    "https://images.stockcake.com/public/2/6/a/26abd9e8-49b0-4f0d-89c1-3869b485b10e/clear-sky-day-stockcake.jpg",
-  Clouds:
-    "https://images.stockcake.com/public/8/5/5/85539e9e-04a4-46ad-b805-05a237ec8e3d/dramatic-cloud-formation-stockcake.jpg",
-  Rain: "https://images.stockcake.com/public/0/b/e/0beaec5f-d13a-4f8e-9c44-cf34450729c4/rainbow-amidst-rain-stockcake.jpg",
-  Snow: "https://images.stockcake.com/public/e/0/9/e0948bed-df95-41df-974b-d697011227a4_large/winter-wonderland-scene-stockcake.jpg",
-  Thunderstorm:
-    "https://images.stockcake.com/public/5/0/9/5090f8d3-5fbe-4488-9487-13fb6c06df1e_large/thunderstorm-over-sea-stockcake.jpg",
-  Mist: "https://images.stockcake.com/public/f/9/b/f9bca236-08d9-446f-8ae8-de8e51ac2af3/city-amidst-fog-stockcake.jpg",
-};
+// // Define background images for different weather conditions
+// const weatherBackgrounds = {
+//   Clear:
+//     "https://images.stockcake.com/public/2/6/a/26abd9e8-49b0-4f0d-89c1-3869b485b10e/clear-sky-day-stockcake.jpg",
+//   Clouds:
+//     "https://images.stockcake.com/public/8/5/5/85539e9e-04a4-46ad-b805-05a237ec8e3d/dramatic-cloud-formation-stockcake.jpg",
+//   Rain: "https://images.stockcake.com/public/0/b/e/0beaec5f-d13a-4f8e-9c44-cf34450729c4/rainbow-amidst-rain-stockcake.jpg",
+//   Snow: "https://images.stockcake.com/public/e/0/9/e0948bed-df95-41df-974b-d697011227a4_large/winter-wonderland-scene-stockcake.jpg",
+//   Thunderstorm:
+//     "https://images.stockcake.com/public/5/0/9/5090f8d3-5fbe-4488-9487-13fb6c06df1e_large/thunderstorm-over-sea-stockcake.jpg",
+//   Mist: "https://images.stockcake.com/public/f/9/b/f9bca236-08d9-446f-8ae8-de8e51ac2af3/city-amidst-fog-stockcake.jpg",
+// };
 
 export default function Home() {
   const [city, setCity] = useState("");
@@ -54,11 +54,11 @@ export default function Home() {
     setCity("");
   };
 
-  // Determine the background image based on weather condition
-  const weatherCondition = weather.weather?.[0]?.main;
-  const backgroundImage = weatherCondition
-    ? weatherBackgrounds[weatherCondition]
-    : "";
+  // // Determine the background image based on weather condition
+  // const weatherCondition = weather.weather?.[0]?.main;
+  // const backgroundImage = weatherCondition
+  //   ? weatherBackgrounds[weatherCondition]
+  //   : "";
 
   return (
     <div className="relative min-h-screen bg-gray-900 text-white">
@@ -66,14 +66,14 @@ export default function Home() {
       <div className="absolute inset-0 bg-black/50 z-[1]" />
 
       {/* Background image */}
-      {backgroundImage && (
+      {/* {backgroundImage && (
         <Image
           src={backgroundImage}
           layout="fill"
           className="object-cover"
           alt="background"
         />
-      )}
+      )} */}
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4">
         {/* Search */}
